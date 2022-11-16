@@ -58,7 +58,7 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
            const userInfoResponse = await api.get("/me")
            setUser(userInfoResponse.data.user)
         }catch(err) {
-            console.log("erro caiu aqui", err)
+            console.log(err)
             
             throw err;
         } finally {
