@@ -52,8 +52,11 @@ export function AuthContextProvider({ children }: AuthProviderProps) {
         try {
             setIsUserLoading(true);
 
-           const response = await api.post('/users', {access_token})
-            console.log(response.data)
+           const tokenResponse = await api.post('/users', {access_token})
+           api.defaults.headers.common['Authorization'] = `Bearer ${tokenResponse.data.token}`
+           
+           const userInfoResponse = await api.get("/me")
+           setUser(userInfoResponse.data.user)
         }catch(err) {
             console.log("erro caiu aqui", err)
             
