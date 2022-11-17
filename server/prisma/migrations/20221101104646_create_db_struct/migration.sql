@@ -27,7 +27,7 @@ CREATE TABLE "Game" (
 -- CreateTable
 CREATE TABLE "Guess" (
     "id" TEXT NOT NULL PRIMARY KEY,
-    "firsTeamPoints" INTEGER NOT NULL,
+    "firstTeamPoints" INTEGER NOT NULL,
     "secondTeamPoints" INTEGER NOT NULL,
     "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "gameId" TEXT NOT NULL,
